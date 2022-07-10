@@ -1,7 +1,5 @@
 # League8 - SDK Documentation
 
-**CTRL + SHIFT + L FOR DARK MODE!**
-
 ## Callbacks
 
 ```lua

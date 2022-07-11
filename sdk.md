@@ -61,7 +61,7 @@ is_chat_open
 int GetTickCount()
 GameObject GetHoveredObject()
 GameObject GetPlayer()
-[MapObject](MapObject.md) GetMap() -- Returns a [MapObject](League8%20-%20SDK%20Documentation%201a9de27ae2a14c4eb053c21a53e109e9/MapObject%207a9dabe8c967467e92625fda3dc4a6bf.md) of the current Map you are playing on.
+[MapObject](https://jiingz.github.io/MapObject) GetMap() -- Returns a [MapObject](League8%20-%20SDK%20Documentation%201a9de27ae2a14c4eb053c21a53e109e9/MapObject%207a9dabe8c967467e92625fda3dc4a6bf.md) of the current Map you are playing on.
 GetObjectByIndex(int index)
 GetObjectByNetId(int networkID)
 GetBestTarget(UnitTag type, float range)

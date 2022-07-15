@@ -677,7 +677,7 @@ function OnUpdate(core) end
 --Triggered after OnUpdate. All visuals of your Plugin should be handled here.
 function OnDraw(core, ui) end
 
---Put all Settings in here
+--Pull at Settings in here
 function DrawSettings(core, ui)
 
 --Triggered once a Unit recieves a buff.
@@ -758,8 +758,16 @@ bool IsPointOnLineSegment(Vector2 point, Vector2 start, Vector2 end)
 IssueMove(Vector2 movePos)
 MoveToCursor()
 IssueAttack(GameObject unit)
+
 -- 0=Q, 1=W, 2 = E...
-CastSpellAtPos(int slot, Vector3 castPos)
+CastSpell(int slot, Vector3 castPos)
+SetupChargeableSpell(int slot, Vector3 castPos)
+SetupChargeableSpell(int slot)
+UpdateChargeableSpell(int slot, Vector3 pos)
+
+--if you don&#x27;t update ur charging spell you to reset it!
+ResetCharge(slot)
+
 WasKeyPressed(int key) -- CLICK HERE FOR KEYCODES
 IsKeyDown(int key) -- CLICK HERE FOR KEYCODES
 Vector2 GetCursor()
@@ -801,7 +809,12 @@ std::string GetStr(string key, string defaultVal);
 void SetInt(string key, int val);
 void SetBool(string key, bool val);
 void SetFloat(string key, float val);
-void SetStr(string key, string val);</code></pre></div><hr id="5543e653-b835-44aa-88fa-78966afccf0d"/><h2 id="670f4fd4-3d27-4787-92f6-6663622a2aa9" class=""><span style="border-bottom:0.05em solid"><strong>Vector Classes and Colors</strong></span></h2><h2 id="a6d5a0f2-2abb-4c6c-9697-27db3b9eb649" class=""><details open=""><summary>Color</summary></details></h2><div class="indented"><h2 id="744ce6f3-e9f0-4412-a7ec-ae47719b6c06" class="">Properties</h2><pre id="a24cb1ca-1c41-4c18-9602-b6f28c63ec2b" class="code code-wrap"><code>float red
+void SetStr(string key, string val);</code></pre></div><h1 id="902b3583-6931-4dd2-af89-25becb8272fa" class=""><details open=""><summary>Prediction (ALPHA VERSION)</summary></details></h1><div class="indented"><pre id="94617b31-bf74-4afd-8368-65daaab847c0" class="code code-wrap"><code>--include prediction
+require &quot;libs\\prediction&quot;
+
+--returns predicted position. If not hittable, it returns Vec3(0,0,0)
+GetLinePred(core, target, range , missile_speed, cast_time)
+-- Circular prediction still WIP</code></pre></div><hr id="5543e653-b835-44aa-88fa-78966afccf0d"/><h2 id="670f4fd4-3d27-4787-92f6-6663622a2aa9" class=""><span style="border-bottom:0.05em solid"><strong>Vector Classes and Colors</strong></span></h2><h2 id="a6d5a0f2-2abb-4c6c-9697-27db3b9eb649" class=""><details open=""><summary>Color</summary></details></h2><div class="indented"><h2 id="744ce6f3-e9f0-4412-a7ec-ae47719b6c06" class="">Properties</h2><pre id="a24cb1ca-1c41-4c18-9602-b6f28c63ec2b" class="code code-wrap"><code>float red
 float green
 float blue
 float alpha</code></pre><pre id="528fb40c-db54-4c77-b72c-0c12097eb452" class="code code-wrap"><code>Color()
@@ -953,3 +966,5 @@ float GetDelay() const
 float GetHeight() const
 float GetTravelTime() const
 std::string GetIcon() const</code></pre></div><p id="ea350908-fd68-452b-92d6-70f92a44b2ed" class="">
+</p></div><h1 id="c6e4eafa-056a-4b48-af8c-38f27bb0fc88" class=""><span style="border-bottom:0.05em solid">Enums</span></h1><figure id="b8e61f5b-3d90-42c9-b8fb-e5f77fac447b" class="link-to-page"><a href="League8%20-%20SDK%20Documentation%201a9de27ae2a14c4eb053c21a53e109e9/SummonerSpellType%20b8e61f5b3d9042c9b8fbe5f77fac447b.html">SummonerSpellType</a></figure><figure id="7a9dabe8-c967-467e-9262-5fda3dc4a6bf" class="link-to-page"><a href="League8%20-%20SDK%20Documentation%201a9de27ae2a14c4eb053c21a53e109e9/MapObject%207a9dabe8c967467e92625fda3dc4a6bf.html">MapObject</a></figure><figure id="7587412f-d5a3-43aa-adfa-49384c8f817c" class="link-to-page"><a href="League8%20-%20SDK%20Documentation%201a9de27ae2a14c4eb053c21a53e109e9/SpellSlot%207587412fd5a343aaadfa49384c8f817c.html">SpellSlot</a></figure><figure id="19fa9a41-05a6-41cf-a131-dd16b5ac5ab7" class="link-to-page"><a href="League8%20-%20SDK%20Documentation%201a9de27ae2a14c4eb053c21a53e109e9/SpellInfo%2019fa9a4105a641cfa131dd16b5ac5ab7.html">SpellInfo</a></figure><figure id="e331164e-e6c0-4463-b778-127afab7c541" class="link-to-page"><a href="League8%20-%20SDK%20Documentation%201a9de27ae2a14c4eb053c21a53e109e9/UnitTag%20e331164ee6c04463b778127afab7c541.html">UnitTag</a></figure><figure id="e5bb64eb-bc6b-44e8-9e61-f419de35b5e0" class="link-to-page"><a href="League8%20-%20SDK%20Documentation%201a9de27ae2a14c4eb053c21a53e109e9/BuffInstance%20e5bb64ebbc6b44e89e61f419de35b5e0.html">BuffInstance</a></figure><p id="0c28d2c8-7494-4c74-b48c-76111bbc4c29" class="">
+</p></div></article></body></html>

@@ -684,10 +684,10 @@ function DrawSettings(core, ui)
 function OnBuffGain(core, unit, buff) end
 
 --Triggered once a Unit recalls.
-function OnRecall(core, unit) end
+function OnRecall(core, unit, recallType) end
 
 --Triggered once a Unit teleports. Including special cases like Shen R.
-function OnTeleport(core, unit) end
+function OnTeleport(core, unit, recallType) end
 
 --Triggered once a Unit sets a new Path/does a new movement command.
 function OnNewPath(core, waypoint, unit) end
@@ -906,6 +906,7 @@ is_targetable
 is_direction
 is_invulnerable
 is_recalling
+recall_type
 atk_range
 current_dash_speed
 is_dashing
@@ -928,6 +929,7 @@ float GetBaseMovementSpeed() const;
 float GetBaseAttackSpeed() const;
 float GetBaseAttackRange() const;
 float GetAttackRange() const;
+float GetRealRange() const; -- gets the real attackRange including multiple factors into the calculation
 float GetHpBarHeight() const;
 
 bool IsEnemyTo(const GameObject&amp; other) const;
